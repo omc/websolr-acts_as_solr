@@ -5,13 +5,16 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "websolr-acts_as_solr"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{Shim from websolr to acts_as_solr}
+    gem.description = %Q{Shim from websolr to acts_as_solr}
     gem.email = "kyle@kylemaxwell.com"
     gem.homepage = "http://github.com/fizx/websolr-acts_as_solr"
     gem.authors = ["Kyle Maxwell"]
-    gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
+    gem.add_dependency "acts_as_solr", "1.1.1"
+    gem.add_dependency "rest-client"
+    gem.add_development_dependency "rspec", ">= 0"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
+    Jeweler::GemcutterTasks.new
   end
 rescue LoadError
   puts "Jeweler (or a dependency) not available. Install it with: sudo gem install jeweler"
