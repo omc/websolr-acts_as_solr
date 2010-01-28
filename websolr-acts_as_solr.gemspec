@@ -25,7 +25,8 @@ Gem::Specification.new do |s|
      "VERSION",
      "lib/websolr-acts_as_solr.rb",
      "test/helper.rb",
-     "test/test_websolr-acts_as_solr.rb"
+     "test/test_websolr-acts_as_solr.rb",
+     "websolr-acts_as_solr.gemspec"
   ]
   s.homepage = %q{http://github.com/fizx/websolr-acts_as_solr}
   s.rdoc_options = ["--charset=UTF-8"]
