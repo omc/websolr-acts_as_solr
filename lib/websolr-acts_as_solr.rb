@@ -1,10 +1,14 @@
 # Post-require hooks for acts_as_solr and sunspot if this 
 # gem is loaded and WEBSOLR_URL is defined.
 
+gem "acts_as_solr", :version => "1.1.1"
+require "acts_as_solr"
+require "rake"
+load "tasks/solr.rake"
+load "tasks/database.rake"
+
 if ENV["WEBSOLR_URL"]
   CLIENT_KEY = "sunspot-0.10"
-  gem "acts_as_solr", :version => "1.1.1"
-  require "acts_as_solr"
   require "rest_client"
   
   api_key = ENV["WEBSOLR_URL"][/[0-9a-f]{11}/] or raise "Invalid WEBSOLR_URL: bad or no api key"
