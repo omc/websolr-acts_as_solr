@@ -41,16 +41,16 @@ If you have to set the variable in Ruby, you should be able to put the following
 
 == Basic Usage
 
-# Just include the line below to any of your ActiveRecord models:
+  # Just include the line below to any of your ActiveRecord models:
   acts_as_solr
 
-# Or if you want, you can specify only the fields that should be indexed:
+  # Or if you want, you can specify only the fields that should be indexed:
   acts_as_solr :fields => [:name, :author]
 
-# Then to find instances of your model, just do:
+  # Then to find instances of your model, just do:
   Model.find_by_solr(query) #query is a string representing your query
 
-# Please see ActsAsSolr::ActsMethods for a complete info
+  # Please see ActsAsSolr::ActsMethods in the RDoc for a complete info
 
 == acts_as_solr in your tests
 
