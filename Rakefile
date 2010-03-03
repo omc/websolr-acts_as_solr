@@ -12,6 +12,7 @@ begin
     gem.authors = ["Kyle Maxwell"]
     gem.add_dependency "acts_as_solr", "1.1.1"
     gem.add_dependency "rest-client"
+    gem.add_dependency "json"
     gem.add_development_dependency "rspec", ">= 0"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
     Jeweler::GemcutterTasks.new

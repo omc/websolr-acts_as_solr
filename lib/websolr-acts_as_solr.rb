@@ -3,19 +3,30 @@
 
 gem "acts_as_solr", :version => "1.1.1"
 require "acts_as_solr"
-require "rake"
-load "tasks/solr.rake"
-load "tasks/database.rake"
 
 if ENV["WEBSOLR_URL"]
-  CLIENT_KEY = "sunspot-0.10"
-  require "rest_client"
-  
   api_key = ENV["WEBSOLR_URL"][/[0-9a-f]{11}/] or raise "Invalid WEBSOLR_URL: bad or no api key"
-  print "Setting schema to #{CLIENT_KEY}..."
-  STDOUT.flush
-  RestClient.post("http://www.websolr.com/schema/#{api_key}", :client => CLIENT_KEY)
-  puts "done"
+  
+  ENV["WEBSOLR_CONFIG_HOST"] ||= "www.websolr.com"
+  
+  @pending = true
+  Rails.logger.info "Checking index availability..."
+
+  response = RestClient.post("http://#{ENV["WEBSOLR_CONFIG_HOST"]}/schema/#{api_key}.json", :client => "acts_as_solr")
+  json = JSON.parse(response)
+  case json["status"]
+  when "ok": 
+    Rails.logger.info "Index is available!"
+    @pending = false
+  when "pending": 
+    Rails.logger.info "Provisioning index, things may not be working for a few seconds ..."
+    sleep 5
+  when "error"
+    Rails.logger.error json["message"]
+    @pending = false
+  else
+    Rails.logger.error "wtf: #{json.inspect}" 
+  end
   
   module ActsAsSolr
     class Post        
