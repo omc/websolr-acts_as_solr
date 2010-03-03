@@ -1,7 +1,7 @@
 # Post-require hooks for acts_as_solr and sunspot if this 
 # gem is loaded and WEBSOLR_URL is defined.
 
-gem "acts_as_solr", :version => "1.1.1"
+gem "acts_as_solr", :version => "1.1.3"
 require "acts_as_solr"
 
 if ENV["WEBSOLR_URL"]

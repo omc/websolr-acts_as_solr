@@ -10,7 +10,7 @@ begin
     gem.email = "kyle@kylemaxwell.com"
     gem.homepage = "http://github.com/fizx/websolr-acts_as_solr"
     gem.authors = ["Kyle Maxwell"]
-    gem.add_dependency "acts_as_solr", "1.1.1"
+    gem.add_dependency "acts_as_solr", "1.2.0"
     gem.add_dependency "rest-client"
     gem.add_dependency "json"
     gem.add_development_dependency "rspec", ">= 0"
