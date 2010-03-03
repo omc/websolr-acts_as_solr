@@ -5,6 +5,10 @@ gem "acts_as_solr", :version => "1.1.3"
 require "acts_as_solr"
 
 if ENV["WEBSOLR_URL"]
+  require "json"
+  require "rest_client"
+  require "uri"
+  
   api_key = ENV["WEBSOLR_URL"][/[0-9a-f]{11}/] or raise "Invalid WEBSOLR_URL: bad or no api key"
   
   ENV["WEBSOLR_CONFIG_HOST"] ||= "www.websolr.com"
