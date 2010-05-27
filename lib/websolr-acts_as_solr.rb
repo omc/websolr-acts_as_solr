@@ -1,7 +1,7 @@
 # Post-require hooks for acts_as_solr and sunspot if this 
 # gem is loaded and WEBSOLR_URL is defined.
 
-gem "acts_as_solr", :version => "1.3.1"
+gem "acts_as_solr", :version => "1.3.2"
 require "acts_as_solr"
 
 if ENV["WEBSOLR_URL"]
@@ -18,8 +18,8 @@ if ENV["WEBSOLR_URL"]
 
   begin
     schema_url = URI.parse("http://#{ENV["WEBSOLR_CONFIG_HOST"]}/schema/#{api_key}.json")
-    response = Net::HTTP.post_form(schema_url, :client => "acts_as_solr-1.3")
-    json = JSON.parse(response.to_s)
+    response = Net::HTTP.post_form(schema_url, "client" => "acts_as_solr-1.3")
+    json = JSON.parse(response.body.to_s)
 
     case json["status"]
     when "ok"
@@ -36,8 +36,8 @@ if ENV["WEBSOLR_URL"]
     end
   rescue Exception => e
     STDERR.puts "Error checking index status. It may or may not be available.\n" +
-                "Please email support@onemorecloud.com if this problem persists.\n"
-                "#{e.message}"
+                "Please email support@onemorecloud.com if this problem persists.\n" +
+                "Exception: #{e.message}"
   end
   
   module ActsAsSolr
