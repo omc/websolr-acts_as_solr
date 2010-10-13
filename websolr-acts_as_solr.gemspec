@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.authors = ["Kyle Maxwell", "Nick Zadrozny"]
   s.date = %q{2010-05-26}
   s.description = %q{Shim from websolr to acts_as_solr}
-  s.email = %q{kyle@kylemaxwell.com}
+  s.email = %q{info@onemorecloud.com}
   s.extra_rdoc_files = [
     "LICENSE",
      "README.rdoc"
@@ -43,16 +43,16 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<acts_as_solr>, ["= 1.3.2"])
+      s.add_runtime_dependency(%q<acts_as_solr>, ["= 1.3.3"])
       s.add_runtime_dependency(%q<json>, [">= 0"])
       s.add_development_dependency(%q<rspec>, [">= 0"])
     else
-      s.add_dependency(%q<acts_as_solr>, ["= 1.3.2"])
+      s.add_dependency(%q<acts_as_solr>, ["= 1.3.3"])
       s.add_dependency(%q<json>, [">= 0"])
       s.add_dependency(%q<rspec>, [">= 0"])
     end
   else
-    s.add_dependency(%q<acts_as_solr>, ["= 1.3.2"])
+    s.add_dependency(%q<acts_as_solr>, ["= 1.3.3"])
     s.add_dependency(%q<json>, [">= 0"])
     s.add_dependency(%q<rspec>, [">= 0"])
   end
