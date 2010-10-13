@@ -7,10 +7,10 @@ begin
     gem.name = "websolr-acts_as_solr"
     gem.summary = %Q{Shim from websolr to acts_as_solr}
     gem.description = %Q{Shim from websolr to acts_as_solr}
-    gem.email = "kyle@kylemaxwell.com"
+    gem.email = "info@onemorecloud.com"
     gem.homepage = "http://github.com/fizx/websolr-acts_as_solr"
     gem.authors = ["Kyle Maxwell", "Nick Zadrozny"]
-    gem.add_dependency "acts_as_solr", "1.3.2"
+    gem.add_dependency "acts_as_solr", "1.3.3"
     gem.add_dependency "json"
     gem.add_development_dependency "rspec", ">= 0"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings

@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{websolr-acts_as_solr}
-  s.version = "1.3.2.0"
+  s.version = "1.3.3.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Kyle Maxwell", "Nick Zadrozny"]
-  s.date = %q{2010-05-26}
+  s.date = %q{2010-10-13}
   s.description = %q{Shim from websolr to acts_as_solr}
   s.email = %q{info@onemorecloud.com}
   s.extra_rdoc_files = [
