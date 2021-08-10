@@ -1,3 +1,5 @@
+DEPRECATED
+
 == About
 
 This is the gem to install for the supported version of acts_as_solr on websolr.
